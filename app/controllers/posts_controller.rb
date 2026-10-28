@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   end
 
   def new
-
+    @post = Post.new
   end
 
   def create
@@ -26,6 +26,12 @@ class PostsController < ApplicationController
     @post.content = params[:content]
     @post.save
 
+    redirect_to("/posts/index")
+  end
+
+  def destroy
+    @post = Post.find_by(id: params[:id])
+    @post.destroy
     redirect_to("/posts/index")
   end
 end

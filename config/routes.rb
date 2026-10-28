@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   get "posts/:id/edit" => "posts#edit"
   post "posts/:id/update" => "posts#update"
+  delete "posts/:id/destroy" => "posts#destroy", as: :destroy_post
 
   get "/" => "home#top"
   get "/about" => "home#about"

@@ -43,4 +43,8 @@ class UsersController < ApplicationController
         render("users/edit", status: :unprocessable_entity)
       end
     end
+
+    def login_form
+      
+    end
 end
